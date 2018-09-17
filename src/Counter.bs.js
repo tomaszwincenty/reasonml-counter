@@ -8,7 +8,7 @@ var ReasonReact = require("reason-react/src/ReasonReact.js");
 
 var component = ReasonReact.reducerComponent("Example");
 
-function make(greeting, _) {
+function make() {
   return /* record */[
           /* debugName */component[/* debugName */0],
           /* reactClassInternal */component[/* reactClassInternal */1],
@@ -21,35 +21,31 @@ function make(greeting, _) {
           /* shouldUpdate */component[/* shouldUpdate */8],
           /* render */(function (self) {
               var message = "You've clicked this " + (String(self[/* state */1][/* count */0]) + " times(s)");
-              var match = self[/* state */1][/* show */1];
-              return React.createElement("div", undefined, React.createElement("button", {
+              return React.createElement("div", {
+                          className: "wrapper"
+                        }, React.createElement("button", {
+                              className: "increment",
                               onClick: (function () {
-                                  return Curry._1(self[/* send */3], /* Click */0);
+                                  return Curry._1(self[/* send */3], /* Increment */0);
                                 })
-                            }, message), React.createElement("button", {
+                            }, "Increment"), React.createElement("button", {
+                              className: "decrement",
                               onClick: (function () {
-                                  return Curry._1(self[/* send */3], /* Toggle */1);
+                                  return Curry._1(self[/* send */3], /* Decrement */1);
                                 })
-                            }, "Toggle greeting"), match ? greeting : null);
+                            }, "Decrement"), React.createElement("div", {
+                              className: "info"
+                            }, message));
             }),
           /* initialState */(function () {
-              return /* record */[
-                      /* count */0,
-                      /* show */true
-                    ];
+              return /* record */[/* count */0];
             }),
           /* retainedProps */component[/* retainedProps */11],
           /* reducer */(function (action, state) {
               if (action) {
-                return /* Update */Block.__(0, [/* record */[
-                            /* count */state[/* count */0],
-                            /* show */!state[/* show */1]
-                          ]]);
+                return /* Update */Block.__(0, [/* record */[/* count */state[/* count */0] - 1 | 0]]);
               } else {
-                return /* Update */Block.__(0, [/* record */[
-                            /* count */state[/* count */0] + 1 | 0,
-                            /* show */state[/* show */1]
-                          ]]);
+                return /* Update */Block.__(0, [/* record */[/* count */state[/* count */0] + 1 | 0]]);
               }
             }),
           /* jsElementWrapped */component[/* jsElementWrapped */13]

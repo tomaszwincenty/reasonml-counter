@@ -1,0 +1,40 @@
+body {
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+.wrapper {
+  padding: 20px;
+}
+
+button {
+  margin: 5px;
+  padding: 5px;
+  background-color: white;
+  border: 3px solid black;
+}
+
+button.increment {
+  color: rgba(130, 0, 0, 0.9);
+  border: 3px solid rgba(150, 0, 0, 0.9);
+}
+
+button.increment:hover {
+  color: rgba(200, 0, 0, 0.9);
+  border: 3px solid rgba(250, 0, 0, 0.9);
+}
+
+button.decrement {
+  color: rgba(0, 0, 130, 0.9);
+  border: 3px solid rgba(0, 0, 150, 0.9);
+}
+
+button.decrement:hover {
+  color: rgba(0, 0, 200, 0.9);
+  border: 3px solid rgba(0, 0, 250, 0.9);
+}
+
+.info {
+  margin: 5px;
+}
